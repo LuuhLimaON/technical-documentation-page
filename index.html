@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>CSS Documentation</title>
+</head>
+
+<body>
+
+    <div id="topbar">
+        <button class="openbtn close" id="openbtn" onclick="menuBtn()">&#9776;</button>
+        <header id="nav-header">CSS: Cascading Style Sheets</header>
+    </div>
+
+    <nav id="navbar">
+        <header id="side-header">CSS Documentation</header>
+        <ul id="nav-list">
+            <li><a href="#What_is_CSS?" class="nav-link" onclick="closeNav()">What is CSS?</a></li>
+            <hr>
+            <li><a href="#How_CSS_works" class="nav-link" onclick="closeNav()">How CSS works</a></li>
+            <hr>
+            <li><a href="#CSS_syntax" class="nav-link" onclick="closeNav()">CSS syntax</a></li>
+            <hr>
+            <li><a href="#Adding_CSS_to_our_document" class="nav-link" onclick="closeNav()">Adding CSS to our document</a></li>
+            <hr>
+            <li><a href="#Styling_HTML_elements" class="nav-link" onclick="closeNav()">Styling HTML elements</a></li>
+            <hr>
+            <li><a href="#Adding_a_class" class="nav-link" onclick="closeNav()">Adding a class</a></li>
+            <hr>
+            <li><a href="#References" class="nav-link">References</a></li>
+        </ul>
+    </nav>
+    <br>
+    <main id="main-doc">
+
+        <section class="main-section" id="What_is_CSS?" style="padding-top:2rem">
+            <header>What is CSS?</header>
+            <article>
+                <p>CSS (Cascading Style Sheets) allows you to create great-looking web pages, but how does it work under
+                    the hood? This article explains what CSS is, with a simple syntax example, and also covers some key
+                    terms about the language.</p>
+                <p>In the Introduction to HTML module we covered what HTML is, and how it is used to mark up documents.
+                    These documents will be readable in a web browser. Headings will look larger than regular text,
+                    paragraphs break onto a new line and have space between them. Links are colored and underlined to
+                    distinguish them from the rest of the text. What you are seeing is the browser's default styles —
+                    very basic styles that the browser applies to HTML to make sure it will be basically readable even
+                    if no explicit styling is specified by the author of the page.</p>
+                <p>However, the web would be a boring place if all websites looked like that. Using CSS you can control
+                    exactly how HTML elements look in the browser, presenting your markup using whatever design you
+                    like.</p>
+            </article>
+        </section>
+
+        <section class="main-section" id="How_CSS_works">
+            <header>How CSS works</header>
+            <article>
+                <p>When a browser displays a document, it must combine the document's content with its style
+                    information. It
+                    processes the document in a number of stages, which we've listed below. Bear in mind that this is a
+                    very
+                    simplified version of what happens when a browser loads a webpage, and that different browsers will
+                    handle the process in different ways. But this is roughly what happens.</p>
+                <ol>
+                    <li>The browser loads the HTML (e.g. receives it from the network).</li>
+                    <li>It converts the HTML into a DOM (Document Object Model). The DOM represents the document in the
+                        computer's memory. The DOM is explained in a bit more detail in the next section.</li>
+                    <li>The browser then fetches most of the resources that are linked to by the HTML document, such as
+                        embedded images and videos ... and linked CSS! JavaScript is handled a bit later on in the
+                        process, and we won't talk about it here to keep things simpler.</li>
+                    <li>The browser parses the fetched CSS, and sorts the different rules by their selector types into
+                        different "buckets", e.g. element, class, ID, and so on. Based on the selectors it finds, it
+                        works out which rules should be applied to which nodes in the DOM, and attaches style to them as
+                        required (this intermediate step is called a render tree).</li>
+                    <li>The render tree is laid out in the structure it should appear in after the rules have been
+                        applied to it.</li>
+                    <li>The visual display of the page is shown on the screen (this stage is called painting).</li>
+                </ol>
+            </article>
+
+        </section>
+
+        <section class="main-section" id="CSS_syntax">
+            <header>CSS syntax</header>
+            <article>
+                <p>CSS is a rule-based language — you define rules specifying groups of styles that should be applied to
+                    particular elements or groups of elements on your web page. For example "I want the main heading on
+                    my page to be shown as large red text."</p>
+
+                <p>The following code shows a very simple CSS rule that would achieve the styling described above:</p>
+                <code><div class="purple">h1</div> {
+                    <div class="red">color</div>: red;
+                    <div class="red">font-size</div>: 5em;
+            }</code>
+
+                <p style="display: inline;">The rule opens with a selector . This selects the HTML element that we are
+                    going to style. In this
+                    case we are styling level one headings (<xmp><h1></xmp>).</p>
+                <p>We then have a set of curly braces <code>{ }</code>. Inside those will be one or more declarations,
+                    which take the
+                    form of property and value pairs. Each pair specifies a property of the element(s) we are selecting,
+                    then a value that we'd like to give the property.</p>
+                <p>
+                    Before the colon, we have the property, and after the colon, the value. CSS properties have
+                    different allowable values, depending on which property is being specified. In our example, we have
+                    the <code>color</code> property, which can take various color values. We also have the
+                    <code>font-size</code> property. This
+                    property can take various size units as a value.
+                </p>
+
+                <p>A CSS stylesheet will contain many such rules, written one after the other.</p>
+                <code><div class="purple">h1</div> {
+                    <div class="red">color</div>: red;
+                    <div class="red">font-size</div>: 5em;
+        }
+        
+        <div class="purple">p</div> {
+            <div class="red">color</div>: black;
+        }</code>
+
+                <p>
+                    You will find that you quickly learn some values, whereas others you will need to look up. The
+                    individual property pages on MDN give you a quick way to look up properties and their values when
+                    you forget, or want to know what else you can use as a value.
+                </p>
+            </article>
+
+        </section>
+
+        <section class="main-section" id="Adding_CSS_to_our_document">
+            <header>Adding CSS to our document</header>
+            <article>
+                <p>The very first thing we need to do is to tell the HTML document that we have some CSS rules we want
+                    it to use. There are three different ways to apply CSS to an HTML document that you'll commonly come
+                    across, however, for now, we will look at the most usual and useful way of doing so — linking CSS
+                    from the head of your document.</p>
+                <p>Create a file in the same folder as your HTML document and save it as <code>styles.css</code>. The
+                    <code>.css</code> extension
+                    shows that this is a CSS file.</p>
+                <p style="display: inline;">To link <code>styles.css</code> to <code>index.html</code>, add the
+                    following line somewhere inside the <xmp><head></xmp> of the HTML
+                    document:
+                </p>
+                <code><<div class="green">link </div> <div class="red">rel</div>="<div class="green">stylesheet</div>" <div class="red">href</div>="<div class="green">styles.css</div>"></code>
+                <p style="display: inline;">This <xmp><link></xmp> element tells the browser that we have a stylesheet, using the <xmp>rel</xmp> attribute,
+                    and the
+                    location of that stylesheet as the value of the <xmp>href</xmp> attribute. You can test that the
+                    CSS works by
+                    adding a rule to <xmp>styles.css</xmp>. Using your code editor, add the following to your CSS
+                    file:
+                </p>
+                <code><div class="purple">h1</div> {
+                    <div class="red">color</div>: red;
+                  }</code>
+                <p>
+                    Save your HTML and CSS files and reload the page in a web browser. The level one heading at the top
+                    of the document should now be red. If that happens, congratulations — you have successfully applied
+                    some CSS to an HTML document. If that doesn't happen, carefully check that you've typed everything
+                    correctly.
+                </p>
+                <p>
+                    You can continue to work in <code>styles.css</code> locally, or you can use our interactive editor
+                    below to
+                    continue with this tutorial. The interactive editor acts as if the CSS in the first panel is linked
+                    to the HTML document, just as we have with our document above.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Styling_HTML_elements">
+            <header>Styling HTML elements</header>
+            <article>
+                <p>By making our heading red, we have already demonstrated that we can target and style an HTML element.
+                    We do this by targeting an element selector — this is a selector that directly matches an HTML
+                    element name. To target all paragraphs in the document, you would use the selector <code>p</code>.
+                    To turn all
+                    paragraphs green, you would use:</p>
+                <code>
+                        <div class="purple">p</div> {
+                            <div class="red">color</div>: green;
+                          }
+                    </code>
+                <p>
+                    You can target multiple selectors at the same time by separating the selectors with a comma. If you
+                    want all paragraphs and all list items to be green, your rule would look like this:
+                </p>
+                <code>
+                    <div class="purple">p, li</div> {
+                       <div class="red">color</div>: green;
+                    }
+                </code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Adding_a_class">
+            <header>Adding a class</header>
+            <article>
+                <p>So far, we have styled elements based on their HTML element names. This works as long as you want all
+                    of the elements of that type in your document to look the same. Most of the time that isn't the case
+                    and so you will need to find a way to select a subset of the elements without changing the others.
+                    The most common way to do this is to add a class to your HTML element and target that class.</p>
+                <p>In your HTML document, add a class attribute to the second list item. Your list will now look like
+                    this:</p>
+
+                <code><xmp>
+<ul>
+    <li>Item one</li>
+    <li class="special">Item two</li>
+    <li>Item <em>three</em></li>
+</ul>
+                    </xmp></code>
+                <p>In your CSS, you can target the class of <code>special</code> by creating a selector that starts with
+                    a full stop
+                    character.</p>
+                <code>
+                        <div class="purple">.special</div> {
+                           <div class="red">color</div>: orange;
+                           <div class="red">font-weight</div>: bold;
+                          }
+                    </code>
+
+                <p style="display: inline;">You can apply the class of special to any element on your page that you want
+                    to have the same look as
+                    this list item. For example, you might want the <xmp><span></xmp> in the paragraph to also be orange
+                    and bold.</p>
+                <p>Sometimes you will see rules with a selector that lists the HTML element selector along with the
+                    class:</p>
+                <code>
+                        <class class="purple">li.special</class> {
+                          <class class="red">color</class>: orange;
+                           <class class="red"> font-weight</class>: bold;
+                          }
+                    </code>
+                <p style="display: inline;">This syntax means "target any <code>li</code> element that has a class of
+                    special". If
+                    you were to do this, then you would no longer be able to apply the class to a <xmp><span></xmp> or
+                    another
+                    element by adding the class to it; you would have to add that element to the list of selectors:
+                </p>
+                <code>
+                   <div class="purple">li.special,
+span.special</div>  {
+ <div class="red">color</div>: orange;
+ <div class="red">font-weight</div> : bold;
+}
+                </code>
+                <p>
+                    As you can imagine, some classes might be applied to many elements and you don't want to have to
+                    keep editing your CSS every time something new needs to take on that style. Therefore, it is
+                    sometimes best to bypass the element and refer to the class, unless you know that you want to create
+                    some special rules for one element alone, and perhaps want to make sure they are not applied to
+                    other things.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="References">
+            <header>References</header>
+            <article>
+                <ul>
+                    <li>All the documentation in this page is taken from <a
+                            href="https://developer.mozilla.org/en-US/docs/Learn/CSS" target="_blank">MDN</a></li>
+                </ul>
+            </article>
+        </section>
+
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

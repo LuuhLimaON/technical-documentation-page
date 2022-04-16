@@ -1,0 +1,229 @@
+html, body {
+    min-width: 290px;
+    color: #FFFFFF;
+    background-color: #121212;
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+xmp {
+    line-height: 2;
+    background-color: #222222;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+ul {
+    padding: 1rem;
+}
+
+hr {
+    width: 60%;
+}
+
+ul hr {
+    width: 100%;
+}
+
+header {
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+code {
+    display: block;
+    text-align: left;
+    white-space: pre-line;
+    position: relative;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 2;
+    background-color: #222222;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #121212;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    transition: 0.5s;
+}
+
+/* ================= navbar ================== */
+
+/* The side navigation menu */
+#navbar {
+    height: fit-content;
+    width: 0;
+    position: fixed;
+    margin: 80px 0 0 0;
+    padding: 0;
+    background-color: #121212;
+    height: 100%;
+    overflow: auto;
+    transition: 0.5s;
+}
+
+
+/* navbar links */
+#navbar a {
+    display: block;
+    color: #FFFFFF;
+    padding: 0.7rem;
+    text-decoration: none;
+}
+
+
+/* Links on mouse-over */
+#navbar a:hover {
+    background-color: #474747;
+    color: white;
+    transition: 0.5s;
+    border-radius: 15px;
+}
+
+
+#navbar li {
+    list-style: none;
+}
+
+#side-header{
+    margin-top: 1rem;
+    padding: 0;
+}
+/* ================== BOTÕES =================== */
+
+.openbtn {
+    background-color: #222222;
+    border: none;
+    color: white;
+    height: 4rem;
+    width: 4rem;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+}
+
+.openbtn:hover {
+    background-color: #474747;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+/* ====================== topbar ==================== */
+
+#topbar {
+    display: flex;
+    background-color: #222222;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    /* Set the topbar to fixed position */
+    top: 0;
+    /* Position the topbar at the top of the page */
+    width: 100%;
+    z-index: 1;
+}
+
+#topbar header {
+    margin: auto;
+}
+
+/* ================= MAIN-DOC ================ */
+
+#main-doc {
+    position: absolute;
+    transition: margin-left .5s;
+    padding: 20px;
+    margin: 100px 50px 110px 100px;
+}
+
+#main-doc header {
+    text-align: left;
+}
+
+section {
+   padding-top: 5rem;
+}
+
+section article {
+    margin: 15px;
+}
+
+article {
+    font-size: 0.96em;
+}
+
+article li {
+    margin-bottom: 15px;
+}
+
+p code {
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    display: inline;
+    margin: 0;
+}
+
+.purple {
+    color: rgb(173, 124, 214);
+    display: inline;
+}
+
+.red {
+    color: rgb(199, 116, 116);
+    display: inline;
+}
+
+.green {
+    color: rgb(124, 192, 124);
+    display: inline;
+}
+
+#references a {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width:815px) {
+    #main-doc {
+        position: absolute;
+        text-align: justify;
+        margin: 0;
+        transition: margin-left .5s;
+        }
+
+    #navbar {
+        z-index: 1;
+        transition: 0.5s;
+    }
+
+}
